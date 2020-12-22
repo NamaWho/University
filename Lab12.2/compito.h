@@ -18,7 +18,7 @@ class VettoreSparso {
     item* p0;
     int maxDim;
 
-    void destroy();
+    void empty();
     VettoreSparso(const VettoreSparso &);
     VettoreSparso& operator=(const VettoreSparso &);
 
@@ -30,7 +30,7 @@ public:
     void visualizzaComeDenso() const;
     void reset(int i);
     VettoreSparso& operator*=(int k);
-    //~VettoreSparso(){destroy();};
+    ~VettoreSparso(){empty();};
 
 };
 

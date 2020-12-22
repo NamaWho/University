@@ -21,7 +21,7 @@ int main(){
    cout<<"\nTest della visualizzaComeDenso ( deve stampare < 0 -2 0 4 0 8 0 > )"<<endl;
    s.visualizzaComeDenso();
    cout<<endl;
-/*
+
    cout<<"\nTest della reset ( deve stampare [7]{(-9,1)(8,5)} )"<<endl;
    s.set(-9,1);     // cambia il valore dell'entrata di indice 1
    s.reset(3);      // elimina l'entrata di indice 3, ossia la (4,3)
@@ -34,7 +34,7 @@ int main(){
    cout<<"\nAltro test dell'operatore *=, nel caso k=0 ( deve stampare [7]{} )"<<endl;
    s*=0;
    cout<<s<<endl;
-
+/*
    {
       cout<<"\nAltro test della reset e test del distuttore ( deve stampare [9]{} )"<<endl;
       VettoreSparso s2(9);
