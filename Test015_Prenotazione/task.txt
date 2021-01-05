@@ -1,0 +1,49 @@
+Una Prenotazione rappresenta un insieme di clienti di una palestra che si sono prenotati ad un evento
+organizzato dalla palestra stessa. I clienti della palestra sono identificati dal loro codice, che è un numero
+intero maggiore di zero. L’evento è a numero chiuso, ed il numero massimo di partecipanti è 5, pari alla
+capacità massima della sala eventi. Le prenotazioni sono gestite su base prioritaria come segue: i) la palestra
+prevede due tipi di abbonamento, gold e silver; ii) i prenotati con abbonamento di tipo gold hanno priorità su
+quelli di tipo silver; iii) tra due prenotazioni di clienti con lo stesso tipo di abbonamento, ha maggiore priorità
+quella che è stata fatta prima. Quando le prenotazioni vengono chiuse, viene stilato l’elenco finale dei
+partecipanti. Da quel momento non è più possibile prenotarsi né ritirare la prenotazione. Implementare le
+seguenti operazioni che possono essere effettuate su una Prenotazione:
+
+--- Metodi invocati nella PRIMA PARTE di main.cpp: ---
+
+✓ Prenotazione p;
+Costruttore di default che inizializza una Prenotazione vuota e aperta.
+
+✓ p.prenota(cli, ti);
+Funzione che prenota il cliente di codice cli, che ha un abbonamento di tipo ti. Se quel cliente ha già
+prenotato, la funzione non fa nulla.
+
+✓ p.cancella(cli, ti);
+Funzione che ritira la prenotazione del cliente di codice cli, che ha un abbonamento di tipo ti. Se tale
+cliente non ha prenotato, o ha prenotato ma con un tipo di abbonamento diverso, la funzione non fa nulla.
+
+✓ cout << p;
+Operatore di uscita per il tipo Prenotazione. L’output è nel formato seguente:
+GOLD
+23
+4
+12
+54
+SILVER
+65
+2
+37
+
+Dove compaiono prima tutti i codici dei prenotati con abbonamento gold e poi tutti quelli con abbonamento
+silver.
+
+--- Metodi invocati nella SECONDA PARTE di main.cpp: ---
+
+✓ int(p);
+Operatore di conversione a intero che restituisce il numero di clienti con abbonamento silver che, se la
+prenotazione fosse chiusa in questo momento, parteciperebbero all’evento.
+
+✓ p.chiudi();
+Funzione che chiude la prenotazione e restituisce l’elenco finale dei partecipanti, in ordine di priorità.
+
+✓ ~Prenotazione();
+Distruttore
