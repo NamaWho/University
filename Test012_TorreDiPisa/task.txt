@@ -1,0 +1,49 @@
+Una TorreDiPisa rappresenta una torre composta da un certo numero di loggiati. Ogni loggiato è
+caratterizzato da una certa pendenza rispetto alla base. La pendenza di un loggiato è data dallo scostamento
+del loggiato rispetto alla base della torre. Implementare le seguenti operazioni che possono essere effettuate
+su una TorreDiPisa:
+
+--- Metodi invocati nella PRIMA PARTE di main.cpp: ---
+
+✓ TorreDiPisa t(N);
+Costruttore che inizializza una TorreDiPisa di massimo N loggiati. All’inizio, la torre non ha nessun
+loggiato.
+
+✓ t += p;
+Operatore di somma e assegnamento, che costruisce un nuovo loggiato sulla torre t, dotato di pendenza p.
+L’intero p è da intendersi come distanza dalla verticale a sinistra della base. Il nuovo loggiato non può avere
+una pendenza minore di quello sottostante, né una pendenza maggiore di 4 rispetto a quello sottostante (pena
+la stabilità della torre). Se queste condizioni non sono soddisfatte, o il numero massimo di loggiati è già stato
+raggiunto, il nuovo loggiato non viene costruito, e la torre rimane inalterata.
+
+✓ cout << t;
+Operatore di uscita per il tipo TorreDiPisa. L’output è nel seguente formato:
+       ========
+       ||||||||
+    ||||||||
+  ||||||||
+  ||||||||
+ ||||||||
+========
+Ogni loggiato è rappresentato da 8 caratteri '|', mentre la base e la sommità sono rappresentate da 8 caratteri
+'='. L’output di cui sopra rappresenta una torre con 5 loggiati, di pendenza rispettivamente 1, 2, 2, 4, e 7.
+
+✓ int(t);
+Operatore di conversione a int per il tipo TorreDiPisa, che restituisce la pendenza media della torre,
+calcolata come la media delle pendenze di tutti i loggiati. La pendenza media è arrotondata per difetto. Se la
+torre non ha loggiati, l’operatore restituisce zero.
+
+--- Metodi invocati nella SECONDA PARTE di main.cpp: ---
+
+✓ t++;
+Operatore di post-incremento per il tipo TorreDiPisa, che aumenta di uno la pendenza di ogni loggiato
+rispetto al sottostante. Rimane il vincolo che ogni loggiato non può avere una pendenza maggiore di 4 rispetto
+a quello sottostante. Se questa condizione non è soddisfatta, la torre rimane inalterata.
+
+✓ t.stabilizza();
+Funzione che riduce di uno la pendenza relativa dei loggiati che hanno pendenza relativa massima. Con
+“pendenza relativa” si intende la pendenza rispetto al loggiato precedente, o alla base nel caso del primo
+loggiato. Le pendenze relative di tutti gli altri loggiati rimangono invariate.
+
+✓ ~TorreDiPisa();
+Distruttore.
