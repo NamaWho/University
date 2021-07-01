@@ -1,0 +1,60 @@
+Una Timeline rappresenta la raccolta delle fotografie pubblicate da un utente su un social network. Ogni
+fotografia è rappresentata da una stringa contenente il suo nome. Non ci sono limiti sulla lunghezza di tale
+nome (deve contenere almeno un carattere). Le fotografie vengono visualizzate a partire da quella inserita più
+recentemente. La timeline può anche avere fotografie “in evidenza”: queste fotografie vengono sempre
+visualizzate per prime nella timeline. Implementare le seguenti operazioni che possono essere effettuate su
+una Timeline:
+
+--- Metodi invocati nella PRIMA PARTE di main.cpp: ---
+
+✓ Timeline tl;
+Costruttore di default che inizializza una Timeline dove ancora non sono state pubblicate fotografie.
+
+✓ tl.pubblica(str, ev);
+Operazione che inserisce la fotografia di nome str nella timeline tl. L’intero ev vale 1 se la fotografia deve
+essere messa in evidenza nella timeline, ovvero se deve essere visualizzata per prima, altrimenti vale 0. La
+stessa fotografia può essere pubblicata più volte nella timeline.
+
+✓ tl.cancella(str);
+Operazione che cancella la fotografia di nome str dalla timeline tl, se presente. Nel caso in cui la fotografia
+compaia più volte nella timeline, viene cancellata solo la prima occorrenza (quella che compare per prima
+nella timeline).
+
+✓ cout << tl;
+Operatore di uscita per il tipo Timeline. L’output è nel formato seguente:
+-----
+(*)montagna.jpg
+(*)mare.png
+gatto.png
+cane.png
+famiglia.jpg
+gatto.png
+-----
+
+Nell’esempio, la timeline tl contiene sei fotografie, di cui due in evidenza (montagna.jpg e mare.png).
+Le fotografie in evidenza, oltre a comparire per prime, sono precedute dalla sequenza di caratteri (*).
+
+--- Metodi invocati nella SECONDA PARTE di main.cpp: ---
+
+✓ !tl;
+Operatore di negazione che cancella tutte le fotografie in evidenza dalla timeline tl. La funzione restituisce
+1 se almeno una fotografia in evidenza è stata cancellata. Se non ci sono fotografie in evidenza, la timeline
+rimane inalterata e la funzione restituisce 0.
+
+✓ tl.mettiInEvidenza(str);
+Operatore che mette in evidenza la fotografia di nome str, se presente nella timeline. In particolare,
+l’operazione sposta la fotografia tra quelle in evidenza (e la visualizza come prima della timeline). Se
+un’occorrenza della fotografia è già in evidenza, l’operazione lascia la timeline inalterata.
+Considerando l’esempio precedente, la chiamata tl.mettiInEvidenza(“famiglia.jpg”) produce
+il seguente output:
+-----
+(*)famiglia.jpg
+(*)montagna.jpg
+(*)mare.png
+gatto.png
+cane.png
+gatto.png
+-----
+
+✓ ~Timeline();
+Distruttore.

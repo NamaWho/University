@@ -1,0 +1,48 @@
+Un ContenitoreDVD è un contenitore fisico di DVD dove può essere custodito un numero
+potenzialmente illimitato di DVD. Ciascun DVD può essere vergine (‘-’), oppure masterizzato. Nel
+secondo caso, il DVD può contenere dati (‘D’) oppure video (‘V’). Nel contenitore i DVD rimangono
+ordinati in base all’ordine di inserimento.
+Le operazioni che si possono effettuale sul contenitore di DVD sono le seguenti:
+
+--- PRIMA PARTE --- (qualora siano presenti errori di compilazione, collegamento o esecuzione in
+questa parte, l’intera prova sarà considerata insufficiente e pertanto non sarà corretta)
+
+ ContenitoreDVD d;
+Costruttore di default, che inizializza un ContenitoreDVD d. Inizialmente il contenitore non
+contiene DVD.
+
+ d.aggiungi()
+Operazione che aggiunge un DVD vergine al contenitore.
+
+ d.aggiungi(g)
+Operazione che aggiunge un DVD di genere g al contenitore, dove g è un carattere, e i caratteri
+validi sono solo ‘D’ e ‘V’. Implementare una corretta gestione delle situazioni di errore.
+
+ d.masterizza(g)
+Operazione che masterizza il primo DVD vergine trovato nel contenitore (ossia il meno recente)
+con contenuto di genere g. La funzione restituisce vero se esiste un DVD vergine da
+masterizzare, falso altrimenti.
+
+ cout << d
+Operatore di uscita per il tipo ContenitoreDVD. L’uscita ha la forma seguente:
+[D-VD-]
+I DVD vengono visualizzati in ordine di inserimento. In questo esempio il contenitore d è
+formato da cinque DVD. Il primo ed il quarto contengono dati, il secondo ed il quinto sono
+vergini e il terzo è un DVD video.
+
+--- SECONDA PARTE ---
+
+ d.elimina()
+Operazione che elimina dal contenitore d il DVD vergine inserito meno di recente.
+
+ ContenitoreDVD d1(d)
+Costruttore di copia che inizializza un oggetto d1 con il valore dell’oggetto d.
+
+ ~d
+Operatore di complemento bit a bit, che ritorna il numero di DVD vergini presenti in d.
+
+ d%g
+Operatore di modulo, che ritorna il numero di DVD di genere g presenti nel contenitore d.
+
+ ~ContenitoreDVD()
+Distruttore della classe ContenitoreDVD.
