@@ -78,7 +78,7 @@ void ins(int* a, int dim,int i=1){
 // QuickSort
 // Complessità caso peggiore: n^2
 // Complessità caso medio/migliore: nlogn
-void quicksort(int A[], int inf, int sup){
+void quicksort(int A[], int inf = 0, int sup = n){
     int perno=A[(inf+sup)/2];
     int s=inf;
     int d=sup;
