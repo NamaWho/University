@@ -1,3 +1,7 @@
+//
+// Created by Daniel Namaki Ghaneh on 12/07/21.
+//
+
 // Libraries
 #include <iostream>     // std::cout
 #include <algorithm>    // std::sort
@@ -127,6 +131,38 @@ int sommaNodiCompleti(Node* root, int level = 1){
     else val = 0;
     return val + sommaNodiCompleti(root->left, level+1) + sommaNodiCompleti(root->right, level+1);
 }
+
+int sommaFoglieDispari(Node* root, int level = 0){
+    if (!root) return 0;
+    int val = (!root->right && !root->left) && level%2 == 1 ? root->value : 0;
+    return val + sommaFoglieDispari(root->left, level+1) + sommaFoglieDispari(root->right, level + 1);
+}
+
+int sommaNodiIncompletiDispari (Node* root, int level = 1){
+    if (!root) return 0;
+    int val = !(root->right && root->left) && level%2 != 0 ? root->value : 0;
+    return val + sommaNodiIncompletiDispari(root->left, level+1) + sommaNodiIncompletiDispari(root->right, level + 1);
+}
+
+void stampaEtichetteDispari(Node* root){
+    if (!root) return;
+    if (!root->right && !root->left && root->value%2) cout << root->value << endl;
+    stampaEtichetteDispari(root->left);
+    stampaEtichetteDispari(root->right);
+}
+
+int altezzaNodo (Node* root, int elem){
+    if (!root) return 0;
+
+    if (elem == root->value) return 1;
+
+    if (elem < root->value)
+        return 1 + altezzaNodo(root->left, elem);
+    else return 1 + altezzaNodo(root->right, elem);
+
+
+}
+
 //=======================================MAIN======================================
 
 int main()
@@ -152,6 +188,10 @@ int main()
     cout << sommaConcordi2(albero.getRoot()) << endl;
     cout << sommaMinMax(albero.getRoot()) << endl;
     cout << sommaNodiCompleti(albero.getRoot()) << endl;
+    cout << sommaFoglieDispari(albero.getRoot()) - albero.getRoot()->value << endl;
+    cout << sommaNodiIncompletiDispari(albero.getRoot()) << endl;
+    cout << "Stampa delle etichette delle foglie con etichetta dispari" << endl;
+    stampaEtichetteDispari(albero.getRoot());
     // ------------------------------------------------------------------------
 }
 
